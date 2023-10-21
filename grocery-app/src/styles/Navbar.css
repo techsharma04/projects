@@ -1,0 +1,84 @@
+.full-bg{
+    background: url(../images/fruits.jpg);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 20px;
+    height: 100vh;
+}
+.nav-bar{
+    background-color: #ee1e41e3;
+    height: 74px;
+    opacity: .9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-bar > h2{
+    color: white;
+    padding-left: 100px;
+    font-weight: 800;
+    font-family: cursive;
+}
+.nav-items{
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 100px 0 0;
+}
+.nav-items > li {
+    padding: 25px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    list-style-type: none;
+}
+
+.banner_main {
+    position: relative;
+    padding-bottom: 110px;
+}
+.text_box {
+    text-align: left;
+    padding-top: 36%;
+}
+.text_box span {
+    color: #000;
+    font-size: 28px;
+    line-height: 20px;
+    font-weight: bold;
+    padding-bottom: 15px;
+    display: block;
+}
+.text_box h1 {
+    font-size: 91px;
+    font-weight: 500;
+    color: #ff3556;
+    margin-bottom: 50px;
+    line-height: 87px;
+}
+.text_box h1 strong {
+    font-size: 79px;
+    font-weight: 500;
+    line-height: 78px;
+}
+.read_more {
+    font-size: 17px;
+    background-color: #000;
+    color: #fff;
+    padding: 12px 0px;
+    width: 100%;
+    max-width: 204px;
+    text-align: center;
+    display: inline-block;
+    transition: ease-in all 0.5s;
+    font-weight: 500;
+    height: 54px;
+}
+.read_more:hover {
+    background: #ff3556;
+    color: #fff;
+    transition: ease-in all 0.5s;
+    border-radius: 30px;
+}
