@@ -6,7 +6,6 @@ import HomePage from "./pages/HomePage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import ProductPage from "./pages/ProductPage";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import SubCategory from "./components/SubCategory";
 import LoginPage from "./pages/Login";
 import RegisterPage from "./pages/RegisterPage";
 

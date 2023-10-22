@@ -4,10 +4,13 @@ import Navbar from "../components/Navbar";
 import Endpoints from "../api/EndPoints";
 import Constants from "../api/Constants";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/actions/cart-actions";
 
 const ProductDetailPage = () => {
     const { id } = useParams();
-    const [product, setProduct] = useState({});
+    const [product, setProduct] = useState({});  
+    const dispatch = useDispatch()
 
     const fetchData = () => {
         axios
@@ -19,6 +22,10 @@ const ProductDetailPage = () => {
     useEffect(() => {
         fetchData();
     }, []);
+
+    const onAddToCartHandler = () => {
+        dispatch(addToCart(product))
+    }
 
     return (
         <>
@@ -50,7 +57,7 @@ const ProductDetailPage = () => {
                                 </span>
                             </h2>
                             <br />
-                            <button className="btn btn-primary">Add to Cart</button>
+                            <button className="btn btn-primary" onClick={onAddToCartHandler}>Add to Cart</button>
                         </div>
                     </div>
                 </div>

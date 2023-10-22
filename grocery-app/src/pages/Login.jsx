@@ -2,17 +2,47 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Endpoints from "../api/EndPoints";
 
 const LoginPage = () => {
+
+    const navigate = useNavigate();
+
+    const [requestResponse, setRequestResponse] = useState({
+        textMessage: '',
+        alertClass: '',
+    })
+
     const initialValues = {
         email: "",
         password: "",
     };
 
+
     const onSubmit = (values) => {
-        console.log(values);
+        axios.post(Endpoints.LOGIN_URL, values)
+            .then(response => {
+                console.log(response.data);
+                setRequestResponse({
+                    textMessage: "Login successfully. Thank you",
+                    alertClass: "alert alert-success"
+                });
+                localStorage.setItem('token', response.data.token);
+                localStorage.setItem('user', JSON.stringify(response.data.user.firstName));
+                navigate("/");
+            },
+                (error) => {
+                    setRequestResponse({
+                        textMessage: error.response.data.message,
+                        alertClass: "alert alert-danger"
+                    });
+                }
+            )
+            .catch((error) => {
+                console.log(error);
+            });
     };
 
     const validationSchema = Yup.object({
@@ -33,6 +63,9 @@ const LoginPage = () => {
                         <div className="col-md-3"></div>
                         <div className="col-md-6">
                             <div className="wrapper">
+                                <div class={requestResponse.alertClass} role="alert">
+                                    {requestResponse.textMessage}
+                                </div>
                                 <h2>Login</h2>
                                 <hr />
                                 <Formik

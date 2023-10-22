@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Navbar from "../components/Navbar";
+import Endpoints from "../api/EndPoints";
 
 const RegisterPage = () => {
     //   const [user, setUser] = useState({
@@ -21,6 +22,11 @@ const RegisterPage = () => {
     //     })
 
     //   };
+
+    const [requestResponse, setRequestResponse] = useState({
+        textMessage: '',
+        alertClass: ''
+    })
     const initialValues = {
         firstName: "",
         email: "",
@@ -29,7 +35,24 @@ const RegisterPage = () => {
     };
 
     const onSubmit = (values) => {
-        console.log(values);
+        axios.post(Endpoints.REGISTER_URL, values)
+            .then(response => {
+                console.log(response.data);
+                setRequestResponse({
+                    textMessage: response.data.message,
+                    alertClass: "alert alert-success"
+                });
+            },
+                (error) => {
+                    setRequestResponse({
+                        textMessage: error.response.data.message,
+                        alertClass: "alert alert-danger"
+                    });
+                }
+            )
+            .catch((error) => {
+                console.log(error);
+            });
     };
 
     //   const validate = (values) => {
@@ -78,6 +101,9 @@ const RegisterPage = () => {
                         <div className="col-md-3"></div>
                         <div className="col-md-6">
                             <div className="wrapper">
+                                <div class={requestResponse.alertClass} role="alert">
+                                    {requestResponse.textMessage}
+                                </div>
                                 <h2>Register</h2>
                                 <hr />
                                 <form onSubmit={formik.handleSubmit} className="form-display">

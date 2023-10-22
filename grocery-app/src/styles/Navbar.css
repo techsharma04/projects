@@ -6,6 +6,16 @@
     padding-top: 20px;
     height: 100vh;
 }
+.shop-img{
+    background: url(../images/shopping-cart.svg);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 45px;
+}
+.badge{
+    padding: 0 0 5px 10px;
+}
 .nav-bar{
     background-color: #ee1e41e3;
     height: 74px;

@@ -3,6 +3,7 @@ import axios from 'axios';
 import Product from './Product';
 import Endpoints from '../api/EndPoints';
 import { useParams } from 'react-router-dom';
+
 const ProductList = () => {
     const {catId} = useParams()
     const [products, setProducts] = useState([])
