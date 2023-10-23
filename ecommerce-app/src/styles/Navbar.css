@@ -1,0 +1,27 @@
+.navbar{
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 0;
+    margin: 0;
+    top: 5px
+}
+.main-menu > ul {
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+}
+.discount > ul {
+    list-style-type: none;
+}
+.collection > ul {
+    list-style-type: none;
+}
+.anchor{
+    color: aliceblue;
+    text-decoration: none;
+}

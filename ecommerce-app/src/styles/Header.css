@@ -1,0 +1,95 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  width: 80%;
+}
+.search {
+  height: 40px;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 0 42px;
+  margin-left: 30px;
+  border: none;
+  border-radius: 0 10px;
+  background: transparent;
+  border: 1px solid rgb(71, 71, 71);
+  color: aliceblue;
+}
+.search::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.logo > h2 {
+  color: aliceblue;
+  font-weight: 600;
+}
+.login-cart {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.cart-items{
+  cursor: pointer;
+}
+.full-cart{
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.cart-total{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.mycart{
+    margin: -8px;
+}
+.small-text{
+    font-weight: 700;
+    color: aliceblue;
+}
+.user,
+.wishlist,
+.cart {
+  background: transparent;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 25px;
+  height: 25px;
+  border: 0;
+  filter: brightness(10);
+}
+.user {
+  background-image: url(../images/icons/huser.svg);
+}
+.wishlist {
+  background-image: url(../images/icons/hwishlist.svg);
+}
+.cart {
+  background-image: url(../images/icons/hcart.svg);
+}
+.cart-count{
+    background-color: red !important;
+}
+.inside-cart{
+  width: 250px;
+  padding: 10px;
+  color: aliceblue;
+}
+.dropdown-menu{
+  background-color: transparent;
+  border: 2px groove black;
+  
+}
+.dropdown-item{
+  font-weight: 600;
+  color: aliceblue;
+}
+.dropdown-item:hover{
+  color: black;
+}
