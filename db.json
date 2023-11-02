@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "firstName": "Atul",
+      "lastName": "Sharma",
+      "email": "techsharma04@gmail.com",
+      "password": "Alliswell1",
+      "token": "o8bfvt96tmwm1y8m6wf1aectn",
+      "confirmPassword": "Alliswell1",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

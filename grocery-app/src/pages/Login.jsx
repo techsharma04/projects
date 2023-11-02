@@ -24,7 +24,6 @@ const LoginPage = () => {
     const onSubmit = (values) => {
         axios.post(Endpoints.LOGIN_URL, values)
             .then(response => {
-                console.log(response.data);
                 setRequestResponse({
                     textMessage: "Login successfully. Thank you",
                     alertClass: "alert alert-success"

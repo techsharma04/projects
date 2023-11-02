@@ -1,0 +1,79 @@
+.register_area{
+    width: 100%;
+    background-color: #fff;
+    min-height: 50vh;
+    font-family: "Outfit", sans-serif;
+    display: flex;
+    justify-content: center;
+}
+.login_area{
+    min-height: 68vh;
+}
+.register-full{
+    padding: 25px;
+    width: 80%;
+    color: rgb(133, 130, 130);
+}
+.form-heading > h1 {
+    font-weight: 700;
+}
+legend{
+    font-size: 18px;
+    padding: 7px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.form-fields{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+.form-fields-login{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.signup-btn{
+    align-self: flex-end;
+    width: 30%;
+}
+.reg-btn{
+    align-self: flex-end;
+}
+.success-msg{
+    color: green;
+}
+.error-msg{
+    color: red;
+}
+.login-click{
+    text-decoration: none;
+    color: blueviolet;
+}
+.form-display{
+    display: flex;
+    flex-direction: column;
+}
+.login-form{
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 25px;
+    width: 38%;
+}
+.decoration-remove{
+    color: var(--main-color);
+}
+.form-sidebar{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.sidebar{
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 25px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
