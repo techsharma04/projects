@@ -40,3 +40,6 @@
 .table > tr > th{
     color: #fff;
 }
+.wishRow {
+    vertical-align: middle;
+}

@@ -9,8 +9,8 @@ import './styles/StarRating.css';
 import './styles/Products.css';
 import './styles/Footer.css';
 import './styles/SingleProduct.css';
-import { Provider } from 'react-redux';
-import store from './redux/store';
+import { store } from './reduxx/store.js'
+import { Provider } from 'react-redux'
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

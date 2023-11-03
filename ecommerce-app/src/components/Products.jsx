@@ -26,6 +26,8 @@ const Products = () => {
         fetchData()
     }, [])
 
+    
+
     return (
         <div className="homepage">
             

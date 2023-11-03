@@ -1,5 +1,13 @@
 {
   "posts": [
-    
+    {
+      "firstName": "Atul",
+      "lastName": "Sharma",
+      "email": "techsharma04@gmail.com",
+      "password": "Alliswell1",
+      "token": "xb998kpbpcbz6rfq0aql893ar",
+      "confirmPassword": "Alliswell1",
+      "id": 1
+    }
   ]
 }

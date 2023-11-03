@@ -1,15 +1,22 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 
 
 const HeaderPage = () => {
 
-    const navigate = useNavigate();
+    // Fetching cart data from cart reducer....
+    const cart = useSelector((state) => state.cart.cartItems)
+    let totalCartQty = 0;
+    cart.map((items) => (totalCartQty += items.itemQuantity));
+
+    // fetching wishlist data from wishlist reducer....
+    const wishlist = useSelector((state) => state.wishlist);
+    let totalQty = wishlist.wishListItems.length;
+
+
+    // Checking and setting login state....
     const [loginState, setLoginState] = useState(false);
-    const { numberCart } = useSelector((state) => state)
-
-
     useEffect(() => {
         let token = localStorage.getItem('token');
         if (!token) {
@@ -19,10 +26,14 @@ const HeaderPage = () => {
         }
     }, [loginState]);
 
+
+    // Forwarding page to home on logout
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const onLogoutHandler = () => {
         localStorage.clear();
         setLoginState(false);
-        navigate("/login");
+        navigate("/");
     };
 
 
@@ -57,23 +68,43 @@ const HeaderPage = () => {
                 )}
 
                 <a className="user" data-bs-toggle="dropdown" ></a>
-                <div className="wishlist">
-                    <span className="position-absolute top-0 start-100 translate-middle badge bg-danger cart-count">
-                        0
-                    </span>
-                </div>
+                <Link to="/wishlist">
+                    <div className="wishlist">
+                        <span className="position-absolute top-0 start-100 translate-middle badge bg-danger cart-count">
+                            {loginState ? (totalQty) : ("0")}
+                        </span>
+                    </div></Link>
                 <div className="full-cart">
                     <div className="cart-total">
                         <div className="mycart"><small className="small-text">My Cart</small></div>
                         <div className="total"><small className="small-text">$0.00</small></div>
                     </div>
                     <div className="cart-items dropdown-center">
-                        {numberCart ? (
+                        {totalCartQty ? (
                             <ul className="dropdown-menu">
                                 <li>
                                     <div className="inside-cart">
                                         <div className="cart-pro-title">
-                                            <legend>Hello</legend>
+                                            <table className="table">
+                                                <tbody>
+                                                    <tr className="wishHeading">
+                                                        {/* <th></th> */}
+                                                        <th>Title</th>
+                                                        <th>Price</th>
+                                                        {/* <th></th> */}
+                                                    </tr>
+                                                    {   cart.map((items) => (
+                                                        <tr className="wishRow" key={items.id}>
+                                                            {/* <td><button className="btn btn-dark"><i class="fa fa-trash" aria-hidden="true" onClick={() => dispatch(clearWishlist(items))}></i></button></td> */}
+                                                            <td><small>{items.title}</small></td>
+                                                            <td><small>$ {items.price}</small></td>
+                                                            {/* <td><small><button id={items.id} className="btn btn-dark" onClick={moveRemove}>{selectedItems ? "Remove from Cart" : "Move to Cart"}</button></small></td> */}
+                                                        </tr>
+                                                    ))}
+
+                                                </tbody>
+
+                                            </table>
                                         </div>
                                     </div>
                                 </li>
@@ -84,11 +115,15 @@ const HeaderPage = () => {
                                 <li><div className="inside-cart">Your cart is empty right now...</div></li>
                             </ul>
                         )}
-                        <div className="cart" data-bs-toggle="dropdown" >
-                            <span className="position-absolute top-0 start-100 translate-middle badge bg-danger cart-count">
-                                {numberCart}
-                            </span>
-                        </div>
+                        <Link to="/shoppingcart">
+                            <div className="cart" 
+                            // data-bs-toggle="dropdown" 
+                            >
+                                <span className="position-absolute top-0 start-100 translate-middle badge bg-danger cart-count">
+                                    {totalCartQty}
+                                </span>
+                            </div>
+                        </Link>
 
                     </div>
 

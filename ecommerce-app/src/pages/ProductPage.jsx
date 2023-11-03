@@ -1,27 +1,31 @@
 import { Link } from "react-router-dom";
 import StarRating from '../pages/StarRating';
-import { useDispatch } from "react-redux";
-import Wishlist from "../components/Wishlist";
-import { addToCart } from "../redux/actions/cart-actions";
+import { useDispatch, useSelector } from "react-redux";
+import Wishlist from "../components/AddToWishlist";
+import { addToCart } from "../reduxx/reducer/cartSlice";
 
 
 const ProductPage = (props) => {
 
     const items = props.data;
     const dispatch = useDispatch()
+    const cart = useSelector((state) => state.cart);
+    const product = cart.cartItems.find((eachProduct) => eachProduct.id === items.id);
 
+    console.log(product);
     const onAddToCartHandler = () => {
         dispatch(addToCart({
-            // id, title, image, price
+            items
         }))
     }
 
+    
     return (
         <div className="pro_banner" key={items.id}>
             <div className="pro_banner_background">
                 <div className="pro_rating_wishlist"> 
                     <StarRating rating={items.rating} />
-                    <Wishlist />
+                    <Wishlist products={items}/>
                 </div>
                 <div className="pro_heading">
                     <Link to={'/products/'+ items.id} className="link_text">
