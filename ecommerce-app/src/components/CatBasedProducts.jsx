@@ -4,7 +4,7 @@ import axios from "axios";
 import Endpoints from '../api/EndPoints';
 import ProductPage from '../pages/ProductPage';
 import { useParams } from "react-router-dom";
-import Navbar from './Categories';
+import Navbar from './Navbar';
 import Header from "../pages/HeaderPage";
 import FooterPage from '../pages/FooterPage';
 

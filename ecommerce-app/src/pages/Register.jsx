@@ -1,12 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Endpoints from "../api/EndPoints";
-import Header from "../pages/HeaderPage";
-import FooterPage from "./FooterPage";
-import Categories from "../components/Categories";
 import '../styles/RegisterLogin.css';
 
 const Register = () => {

@@ -7,6 +7,8 @@ import Login from "./pages/Login";
 import Wishlist from "./components/Wishlist";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from "./components/Cart";
+import Checkout from "./pages/Checkout";
+import OrderHistory from "./components/OrderHistory";
 
 function App() {
 
@@ -24,6 +26,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/shoppingcart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/orderhistory" element={<OrderHistory />} />
       </Routes>
     </BrowserRouter>
   );

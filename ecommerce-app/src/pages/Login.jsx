@@ -3,7 +3,7 @@ import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
-import Categories from "../components/Categories";
+import Navbar from "../components/Navbar";
 import Endpoints from "../api/EndPoints";
 import Header from "../pages/HeaderPage";
 import FooterPage from "./FooterPage";
@@ -72,7 +72,7 @@ const Login = () => {
         <div className="homepage">
             <Header />
             <hr />
-            <Categories />
+            <Navbar />
             <hr />
             <div className="register_area login_area">
                 <div className="register-full">

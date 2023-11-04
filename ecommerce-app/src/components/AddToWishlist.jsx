@@ -6,9 +6,11 @@ const AddToWishlist = (props) => {
 
     const items = props.products;
 
-
     const [wish, setWish] = useState({});
+    const [color, setColor] = useState({});
     const dispatch = useDispatch();
+    const wishlist = useSelector((state) => state.wishlist.wishListItems);
+    let isAvailable = wishlist.find((item) => item.id === items.id);
 
     const wishListHandler = (items) => {
         const token = localStorage.getItem("token");
@@ -25,7 +27,9 @@ const AddToWishlist = (props) => {
     }
 
     return (
-        <i className="fa fa-heart wishlisticon" aria-hidden="true" style={{color: wish[items.id] ? "red" : "white",}} onClick={() => wishListHandler(items)}></i>
+
+        <i className="fa fa-heart wishlisticon" aria-hidden="true" style={{ color: isAvailable ? "red" : "white", }} onClick={() => wishListHandler(items)}></i>
+
     )
 }
 

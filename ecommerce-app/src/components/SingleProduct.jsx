@@ -5,7 +5,7 @@ import Endpoints from '../api/EndPoints';
 import { useParams } from "react-router-dom";
 import SingleProductPage from "../pages/SingleProductPage"
 import Header from "../pages/HeaderPage";
-import Categories from './Categories';
+import Navbar from './Navbar';
 import FooterPage from '../pages/FooterPage';
 
 const SingleProducts = () => {
@@ -27,7 +27,7 @@ const SingleProducts = () => {
         <div className="homepage">
             <Header />
             <hr />
-            <Categories />
+            <Navbar />
             <hr />
             <div className="pro_area">
                 {

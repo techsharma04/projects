@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Endpoints from '../api/EndPoints';
 import ProductPage from '../pages/ProductPage';
-import Navbar from './Categories';
+import Navbar from './Navbar';
 import Header from "../pages/HeaderPage";
 
 const Products = () => {
@@ -16,21 +16,22 @@ const Products = () => {
             .catch(error => console.log(error))
     }
 
+    useEffect(() => {
+        fetchData()
+    }, [])
+
     let proItems = [];
 
     if (product) {
         proItems = Object.values(product);
     }
 
-    useEffect(() => {
-        fetchData()
-    }, [])
-
     
+
 
     return (
         <div className="homepage">
-            
+
             <div className="pro_area">
 
                 {

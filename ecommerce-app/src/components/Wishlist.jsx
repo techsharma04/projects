@@ -4,13 +4,15 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import AccountSidebar from '../pages/AccountSidebar'
 import Header from "../pages/HeaderPage";
-import Categories from "./Categories";
+import Categories from "./Navbar";
 import FooterPage from "../pages/FooterPage";
 import AccountWishList from "../pages/AccountWishlist";
 import { useNavigate } from "react-router-dom";
 
 
-const WishListAccount = () => {
+const WishListAccount = (props) => {
+
+    const items = props.products;
 
     const [loginState, setLoginState] = useState(false);
     const navigate = useNavigate();
@@ -25,6 +27,7 @@ const WishListAccount = () => {
     }, [loginState]);
 
     const wishlist = useSelector((state) => state.wishlist.wishListItems);
+    
 
     return (
         <div className="homepage">
@@ -39,7 +42,7 @@ const WishListAccount = () => {
                     </div>
                     <div className="sidebar-account">
                         <AccountSidebar />
-                        <AccountWishList products={wishlist} />
+                        <AccountWishList items={wishlist} />
                     </div>
                 </div>
             </div>

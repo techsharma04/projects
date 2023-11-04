@@ -1,25 +1,28 @@
 
-
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Header from "../pages/HeaderPage";
-import Categories from "./Categories";
+import Categories from "./Navbar";
 import FooterPage from "../pages/FooterPage";
 import ShoppingCart from "../pages/ShoppingCart";
 
 
 const Cart = () => {
 
+    const [loginState, setLoginState] = useState(false);
+    const navigate = useNavigate();
+    useEffect(() => {
+        let token = localStorage.getItem('token');
+        if (!token) {
+            setLoginState(false);
+            navigate("/login");
+        } else {
+            setLoginState(true);
+        }
+    }, [loginState]);
+
     const shoppingcart = useSelector((state) => state.cart.cartItems);
-    let totalAmount = 0;
-    let shippingCharges = 20;
-    // const dispatch = useDispatch();
-    // const navigate = useNavigate();
-
-    for (let eachItem of shoppingcart) {
-        totalAmount += eachItem.price * eachItem.itemQuantity;
-    }
-
-    let checkoutPrice = totalAmount + shippingCharges;
 
     return (
         <div className="homepage">

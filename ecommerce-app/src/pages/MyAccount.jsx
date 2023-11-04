@@ -1,8 +1,7 @@
-import Categories from "../components/Categories";
+import Navbar from "../components/Navbar";
 import Header from "../pages/HeaderPage";
 import FooterPage from "./FooterPage";
 import "../styles/MyAccount.css"
-import { Link } from "react-router-dom";
 import AccountSidebar from "./AccountSidebar";
 
 const MyAccount = () => {
@@ -17,7 +16,7 @@ const MyAccount = () => {
         <div className="homepage">
             <Header />
             <hr />
-            <Categories />
+            <Navbar />
             <hr />
             <div className="account_area">
                 <div className="account-page-full">

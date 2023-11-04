@@ -43,3 +43,9 @@
 .wishRow {
     vertical-align: middle;
 }
+.align-center{
+    text-align: center;
+}
+.qty-btns > button{
+    margin: 0 10px;
+}

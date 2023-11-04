@@ -6,7 +6,7 @@ const AccountSidebar = () => {
         <div className="account-sidebar">
             <legend>MY ORDERS</legend>
             <Link to="/myaccount" className="login-click decoration-remove"><small>Profile</small></Link>
-            <Link to="" className="login-click decoration-remove"><small>Order History</small></Link>
+            <Link to="/orderhistory" className="login-click decoration-remove"><small>Order History</small></Link>
             <Link to="" className="login-click decoration-remove"><small>Downloads</small></Link>
             <Link to="" className="login-click decoration-remove"><small>Returns</small></Link>
             <Link to="" className="login-click decoration-remove"><small>Transactions</small></Link>

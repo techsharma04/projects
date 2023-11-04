@@ -1,5 +1,5 @@
 import Header from "../pages/HeaderPage";
-import Navbar from "../components/Categories";
+import Navbar from "../components/Navbar";
 import Products from "../components/Products";
 import FooterPage from "./FooterPage";
 
