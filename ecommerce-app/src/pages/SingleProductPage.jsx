@@ -1,8 +1,24 @@
 import StarRating from '../pages/StarRating';
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector} from "react-redux";
+import Wishlist from "../components/AddToWishlist";
+import { addToCart, removeFromCart } from "../reduxx/reducer/cartSlice";
 
 const SingleProductPage = (props) => {
 
     const product = props.product;
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    
+
+    const shoppingcart = useSelector((state) => state.cart.cartItems);
+    let isAvailable = shoppingcart.find((item) => item.id === product.id);
+
+    const onAddToCartHandler = () => {
+        dispatch(addToCart(product))
+    }
+
 
     return (
         <div className="spro_main">
@@ -10,7 +26,7 @@ const SingleProductPage = (props) => {
                 <div className="spro_section">
                     <div className="pro_rating_wishlist">
                         <StarRating rating={product.rating} />
-                        <button className='pro_wishlist wishlist'></button>
+                        <Wishlist products={product}/>
                     </div>
                     <div className="spro_heading">
                         <h1>{product.title}</h1>
@@ -37,13 +53,13 @@ const SingleProductPage = (props) => {
                     <div className="spro_price_btn">
                         <h3>Price: $ {product.price}</h3>
                         <div className="qty_cart_btn">
-                            <div className="qty_btn">
-                                <button className="qty">-</button>
-                                <input id="input-quantity" type="text" name="quantity" value="1" size="2" className="form-control input-number pull-left qty inp" />
-                                <button className="qty">+</button>
-                            </div>
+                            
                             <div className="cart_btn">
-                                <button className='spro_cart_btn'>Add to Cart</button>
+                                {isAvailable ? (
+                                    <button className='spro_cart_btn' onClick={() => navigate("/shoppingcart")}>View Cart</button>
+                                ) : (
+                                    <button className='spro_cart_btn' onClick={onAddToCartHandler}>Add to Cart</button>
+                                )}
                             </div>
                         </div>
                     </div>
