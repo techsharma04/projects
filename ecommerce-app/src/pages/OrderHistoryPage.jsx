@@ -34,8 +34,7 @@ const OrderHistoryPage = (props) => {
                                     </tr>
                                     {
                                         items.map((item) => (
-                                            <tr className="wishRow">
-
+                                            <tr className="wishRow"> 
                                                 <td className="align-center"><small><img src={item.product.image} alt={items.title} width={50} /></small></td>
                                                 <td><small>{item.product.title}</small></td>
                                                 <td className="align-center"><small>$ {item.product.price}</small></td>
