@@ -13,7 +13,7 @@ import OrderHistory from "./components/OrderHistory";
 function App() {
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/SoulSelections'>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/products/category/:category" element={<CatBasedProducts />} />
