@@ -120,7 +120,12 @@ const HeaderPage = () => {
                                                             <Link to="/shoppingcart"><button className="btn btn-dark">View Cart</button></Link>
                                                         </td>
                                                         <td colSpan={2} className="cart-btn2">
+                                                        {loginState ? (
                                                             <Link to="/checkout"><button className="btn btn-dark" onClick={checkoutHandle}>Checkout</button></Link>
+                                                        ): (
+                                                            <Link to="/login"><button className="btn btn-dark" onClick={checkoutHandle}>Checkout</button></Link>
+                                                        )
+                                                        }
                                                         </td>
                                                     </tr>
                                                 </tbody>
