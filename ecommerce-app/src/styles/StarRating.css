@@ -1,0 +1,11 @@
+.pro_rating{
+    display: flex;
+    width: 170px;
+    justify-content: space-between;
+  }
+  .pro_star_count {
+    color: aliceblue;
+  }
+  .checked {
+    color: orange;
+  }

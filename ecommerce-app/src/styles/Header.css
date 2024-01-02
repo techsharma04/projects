@@ -1,0 +1,137 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 0;
+  width: 80%;
+}
+.search-bar{
+  margin-left: 30px;
+}
+.search-form{
+  display: flex;
+  border: 1px solid rgb(71, 71, 71);
+  border-radius: 0 10px;
+}
+.search {
+  height: 40px;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 0 70px 0 10px;
+  border: none;
+  background: transparent;
+  color: aliceblue;
+}
+.search::selection{
+  border: 0;
+}
+.search::placeholder {
+  color: rgb(255, 255, 255);
+}
+.search-btn {
+  background-color: transparent;
+  border: 0;
+}
+.logo{
+  background-color: rgb(0, 0, 0, .5);
+  padding: 10px 50px;
+  border-radius: 10px;
+}
+.logo > h2 {
+  color: aliceblue;
+  font-weight: 600;
+}
+.login-cart {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.cart-items{
+  cursor: pointer;
+}
+.full-cart{
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.cart-total{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mycart{
+    margin: -8px;
+}
+.small-text{
+    font-weight: 700;
+    color: aliceblue;
+}
+.user,
+.wishlist,
+.cart {
+  background: transparent;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 25px;
+  height: 25px;
+  border: 0;
+  filter: brightness(10);
+}
+.user {
+  background-image: url(../images/icons/huser.svg);
+}
+.wishlist {
+  background-image: url(../images/icons/hwishlist.svg);
+}
+.wishlisticon{
+  top: 10px;
+  left:10px;
+  font-size: 24px;
+  z-index: 1;
+}
+.cart {
+  background-image: url(../images/icons/hcart.svg);
+}
+.cart-count{
+    background: blue !important;
+}
+.inside-cart{
+  width: 250px;
+  padding: 10px;
+  color: black;
+}
+.inside-cart:hover{
+  color: rgb(31, 19, 196);
+}
+.dropdown-menu{
+  background-color: aliceblue;
+}
+.dropdown-item{
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  color: #1a1746;
+}
+.dropdown-item:hover{
+  background-color: transparent;
+  color: rgb(31, 19, 196);
+}
+.link_text > span {
+  font-size: 35px;
+  font-family: 'Agbalumo', sans-serif;
+}
+.cart-drop{
+  background-color: black;
+  width: 500px;
+  padding: 15px 20px;
+}
+.cart-btns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.align-center{
+  text-align: center;
+}

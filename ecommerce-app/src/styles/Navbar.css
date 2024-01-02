@@ -1,0 +1,56 @@
+.navbar {
+  color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  padding: 0;
+  margin: 0;
+  top: 8px;
+}
+.main-menu > ul {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+}
+.main-menu > ul > li {
+  text-transform: capitalize;
+}
+.discount > ul {
+  list-style-type: none;
+}
+.collection > ul {
+  list-style-type: none;
+}
+.anchor {
+  color: aliceblue;
+  text-decoration: none;
+}
+.active{
+    font-size: 20px;
+}
+.blink {
+    animation: animate 1.5s linear infinite;
+}
+@keyframes animate {
+  0% {
+    opacity: 0;
+    color: blueviolet
+  }
+  50% {
+    opacity: 1;
+    color: aliceblue;
+  }
+  100% {
+    opacity: 0;
+    color: blueviolet;
+  }
+}
+
+.link_text:hover{
+  color: blueviolet;
+  font-size: 30px;
+  transition: ease-in-out all 0.8s;
+}

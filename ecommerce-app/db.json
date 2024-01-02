@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "firstName": "Atul",
+      "lastName": "Sharma",
+      "email": "techsharma04@gmail.com",
+      "password": "Alliswell1",
+      "token": "g5tpmq2adp0nwr36dgol1pbe0",
+      "confirmPassword": "Alliswell1",
+      "id": 1
+    },
+    {
+      "firstName": "Atul ",
+      "lastName": "Sharma",
+      "email": "atul5421@gmail.com",
+      "password": "Alliswell",
+      "token": "7mpewmq5k9fr1zcq7otz74stc",
+      "confirmPassword": "Alliswell",
+      "id": 2
+    }
+  ]
+}
