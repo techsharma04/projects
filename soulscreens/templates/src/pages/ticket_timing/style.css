@@ -1,0 +1,138 @@
+.timing-details {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: right;
+    /* background-size: cover; */
+    height: 100%;
+    width: 100%;
+}
+
+.timing-details-row {
+    
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 9;
+    margin-top: 300px;
+}
+
+.timing-details>div>p {
+    color: #7c8bba;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.timing-top-row {
+    width: 100%;
+    height: 200px;
+    background: rgb(1, 18, 48);
+    background: linear-gradient(180deg, rgba(1, 18, 48, .7) 0%, rgba(3, 26, 69, .7) 54%, rgba(0, 0, 0, .7) 100%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.timing-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 100px;
+}
+
+.timing-input-div{
+    width: 330px;
+    padding: 0 5px;
+}
+
+.time-input-div-2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: uppercase;
+    column-gap: 20px;
+}
+
+.timing-label {
+    color: #31d7a9;
+    width: 80px;
+    font-weight: 600;
+}
+
+
+.timing-bottom-row {
+    width: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timing-bottom-inside-row {
+    padding: 50px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.time-row {
+    color: #fff;
+    background-color: #01173f;
+    width: 100%;
+    
+}
+
+.time-col {
+    border-bottom: 1px solid #1a4ca8;
+    padding: 15px 55px;
+    text-transform: uppercase;
+}
+
+.time-col-1 {
+    border-right: 1px solid #1a4ca8;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.time-col-2 {
+    padding-left: 20px !important;
+}
+
+.time-col-row {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 25px;
+}
+
+.time-col-1:hover i {
+    color: red;
+}
+
+.time-btn {
+    background-color: #001232 !important;
+    color: #fff !important;
+    padding: 5px 10px !important;
+    border: 1px solid #001232 !important;
+}
+
+.time-btn:hover {
+    background-color: #31d7a9 !important;
+    color: #000 !important;
+}
+
+.error-message {
+    border: 2px solid red;
+}
+
